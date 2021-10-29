@@ -7,4 +7,4 @@ parent: API Docs
 
 # Xamarin API Docs
 
-[View](http://ipcdocs.azurewebsites.net/api/)
+[View Xamarin API Docs](http://ipcdocs.azurewebsites.net/api/)
