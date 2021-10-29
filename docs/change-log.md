@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Change Log
-nav_order: 8
+nav_order: 5
 has_children: true
 permalink: change-log
 ---
