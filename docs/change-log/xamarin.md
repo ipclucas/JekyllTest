@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Xamarin Change Log
+title: Xamarin
 nav_order: 3
 parent: Change Log
 ---
 
-# Change Log
+# Xamarin Change Log
 
 ### 1.2.0 - 2021-05-13
 

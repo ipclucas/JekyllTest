@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Android Change Log
+title: Android
 nav_order: 2
 parent: Change Log
 ---
 
-# Change Log
+# Android Change Log
 
 ### 1.2.0 - 2021-05-13
 

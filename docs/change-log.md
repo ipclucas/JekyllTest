@@ -9,5 +9,5 @@ permalink: change-log
 # Change Log
 {: .fs-9 }
 
-Select your preferred platform below to view the Change Log.
+Select platform below to view its Change Log.
 {: .fs-5 .fw-300 }

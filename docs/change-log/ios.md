@@ -1,11 +1,11 @@
 ---
 layout: default
-title: iOS Change Log
+title: iOS
 nav_order: 1
 parent: Change Log
 ---
 
-# Change Log
+# iOS Change Log
 
 ### 1.2.0 - 2021-05-13
 

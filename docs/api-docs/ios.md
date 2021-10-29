@@ -1,6 +1,6 @@
 ---
 layout: default
-title: iOS API Docs
+title: iOS
 nav_order: 1
 parent: API Docs
 ---
