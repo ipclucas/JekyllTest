@@ -13,8 +13,8 @@ Select a framework below to view its API reference.
 * [QuantumPayPeripheral](https://quantumpayperipheral-ios.netlify.app)
 
 ## Download
-These docs were created with DocC, so you can also download these .doccarchive files and view it locally within Xcode (requires Xcode 13).
-<br>
+These docs were created with DocC so you can also download the .doccarchive files and view them locally within Xcode (requires Xcode 13).
+
 * [QuantumPayClient](https://github.com/InfinitePeripherals/QuantumPayClient-iOS/raw/master/QuantumPayClient.doccarchive.zip)
 * [QuantumPayMobile](https://github.com/InfinitePeripherals/QuantumPayMobile-iOS/raw/master/QuantumPayMobile.doccarchive.zip)
 * [QuantumPayPeripheral](https://github.com/InfinitePeripherals/QuantumPayPeripheral-iOS/raw/master/QuantumPayPeripheral.doccarchive.zip)
