@@ -12,7 +12,7 @@ If your payment device supports barcode scanning (e.g.: QPC150, QPC250), in orde
 self.paymentDevice.device.addDelegate(self)
 ```
 Once a barcode is scanned, it will be sent to this delegate method:
-```
+```swift
 func barcodeData(_ barcode: String!, type: Int32) {
     // Handle the barcode
 }

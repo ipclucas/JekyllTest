@@ -18,7 +18,7 @@ grand_parent: Getting Started
 
 ### 1. Initialize the SDKs
 The SDKs need to be initialized with the correct keys provided by Infinite Peripherals. This step is important and should be the first code to run before using other functions from the SDKs.
-```
+```swift
 // Create tenant
 let tenant = Tenant(hostKey: "Host key", tenantKey: "Tenant key")
 
@@ -29,18 +29,18 @@ InfinitePeripherals.initialize(developerKey: "Developer key", tenant: tenant)
 ### 2. Create Payment Device
 These are current supported payment devices: QPC150, QPC250, QPP400, QPP450, QPR250, QPR300. You can initialize one of these object to use for payment depends on which hardware you have. 
 - Initialize QPC150, QPC250 (Lightning connector)
-```
+```swift
 let paymentDevice = QPC250()
 ```
 - Initialize QPP400, QPP450, QPR250, QPR300 (Bluetooth LE) by supplying its serial number so the `PaymentEngine` can search for it and connect. On the first connection, the app will ask for pairing. Press OK on the popup appear on the app. On the device, if it is QPR device, press the little button on top of the device opposite with the power button, if it is QPP device, press the green check mark button on bottom right of the keypad to complete the pairing.
-```
+```swift
 // The device serial number is found on the label on the device.
 let paymentDevice = QPR250(serial: "2320900026") 
 ```
 
 ### 3. Create Payment Engine
 The payment engine is the main object that you will interact with to send transactions and receive callbacks.
-```
+```swift
 do {
     try PaymentEngine
         // The PaymentEngineBuilder object.
@@ -72,14 +72,14 @@ catch {
 ### 4. Setup Handlers
 Once the `PaymentEngine` is created, you can use it to set handlers for the operation. The `PaymentEngine` handlers will get called through out the payment process and return back various states of the transaction. You can also set these handlers in the completion block of Step #3.
 - `ConnectionStateHandler` will get called when the connection state of the payment device changes between connecting, connected, and disconnected. Please make sure that the connection state is connected before starting a transaction.
-```
+```swift
 self.pEngine!.setConnectionStateHandler(handler: { (peripheral, connectionState) in
     // Handle connection state
 })
 ```
 
 - `TransactionResultHandler` will get called after the transaction processing. The result status will disclose whether the transaction is declined, or approved.
-```
+```swift
 self.pEngine!.setTransactionResultHandler(handler: { (transactionResult) in
     // Handle the transaction result
     // TransactionResult.status provides the transaction result
@@ -88,21 +88,21 @@ self.pEngine!.setTransactionResultHandler(handler: { (transactionResult) in
 ```
 
 - `TransactionStateHandler` will get called when the transaction state changes. The TransactionState represents a unique state in the workflow of capturing a transaction.
-```
+```swift
 self.pEngine!.setTransactionStateHandler(handler: { (peripheral, transaction, transactionState) in
     // Handle the transaction states
 })
 ```
 
 - `PeripheralStateHandler` will get called when peripheral state of the transaction changes. The peripheral state represents the current state of the peripheral as reported by the peripheral device itself.
-```
+```swift
 self.pEngine!.setPeripheralStateHandler(handler: { (peripheral, state) in
     // Handle peripheral state
 })
 ```
 
 - `PeripheralMessageHandler` will get called when there is new message about the transaction through out the process. The peripheral message tells you when to present the card, if the care read is ok or fails, etc.
-```
+```swift
 self.pEngine!.setPeripheralMessageHandler(handler: { (peripheral, message) in
     // Handle the peripheral message
 })
@@ -110,13 +110,13 @@ self.pEngine!.setPeripheralMessageHandler(handler: { (peripheral, message) in
 
 ### 5. Connect to Payment Device
 Please make sure the device is attached and turned on. We need to connect to the payment device prior to start the transaction using the payment device. The connection state will be returned to `ConnectionStateHandler` that we already setup at Step #4. If you did't set AutoConnect when adding the peripheral in Step #3, you need to call `connect()` before starting a transaction: 
-```
+```swift
 self.pEngine!.connect()
 ```
 
 ### 6. Create an Invoice
 The invoice holds information about a purchase order, and the items in the order.
-```
+```swift
 let invoice = try self.pEngine!
                     // Build invoice with a reference number. This can be anything.
                     .buildInvoice(reference: invoiceNum)
@@ -145,7 +145,7 @@ let invoice = try self.pEngine!
 
 ### 7. Create a Transaction
 The transaction holds information about the invoice, the total amount for that transaction, and the type of the transaction (e.g.: sale, auth, refund...)
-```
+```swift
 let transaction = try self.pEngine!.buildTransaction(invoice: invoice)
                         // The transaction is of type Sale
                         .sale()
@@ -165,7 +165,7 @@ let transaction = try self.pEngine!.buildTransaction(invoice: invoice)
 
 ### 8. Start Transaction
 When we have everything ready, we can now start the transaction and take payment. Watch the handlers' messages, and statuses to see the current process.
-```
+```swift
 try self.pEngine!.startTransaction(transaction: txn) { (transactionResult, transactionResponse) in
         // Handle the transaction result and response
         // transactionResult.status disclose the state of the transaction after processed. See `TransactionResultStatus` for more info.
@@ -177,7 +177,7 @@ try self.pEngine!.startTransaction(transaction: txn) { (transactionResult, trans
 
 ### 9. Transaction Receipt
 Once the transaction is completed and approved, you can retrieve the receipt from the `TransactionResultHandler` callback. 
-```
+```swift
 // The url for customer receipt
 transactionResult.receipt?.customerReceiptUrl
 
@@ -187,6 +187,6 @@ transactionResult.receipt?.merchantReceiptUrl
 
 ### 10. Disconnect Payment Device
 If needed, you can disconnect the payment device at anytime. The device need to be connected at all time before, and during a transaction process.
-```
+```swift
 self.pEngine!.disconnect()
 ```
