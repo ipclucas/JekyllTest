@@ -14,11 +14,14 @@ Learn how to set up your iOS app to use QuantumPay to process payment transactio
 
 ---
 
-### Table of contents
-{: .no_toc .text-delta }
-
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
 1. TOC
 {:toc}
+</details>
 
 ---
 
