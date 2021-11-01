@@ -35,7 +35,7 @@ Learn how to set up your iOS app to use QuantumPay to process payment transactio
     - ObjectBox *(CocoaPods)*
 - Xcode 11+
 - iOS 13+
-- Infinitie Peripherals' payment device
+- Infinite Peripherals' payment device
 - Swift
 - Payment related credentials: username/email, password, service name, and tenant key (please contact Infinite Peripherals)
 - Developer key for your app bundle ID (please contact Infinite Peripherals)
@@ -65,25 +65,28 @@ Learn how to set up your iOS app to use QuantumPay to process payment transactio
 ### Add MFi protocols
 Add new entry for "Supported external accessory protocols" to **Info.plist** with these values
 
-* com.datecs.pengine
-* com.datecs.linea.pro.msr
-* com.datecs.linea.pro.bar
-* com.datecs.printer.escpos
-* com.datecs.pinpad
+```
+com.datecs.pengine
+com.datecs.linea.pro.msr
+com.datecs.linea.pro.bar
+com.datecs.printer.escpos
+com.datecs.pinpad
+```
 
 ### Add **Privacy** entries into **Info.plist**
 
 #### Bluetooth BLE privacy options to connect to payment devices
+```
 * "Privacy - Bluetooth Always Usage Description" 
 * "Privacy - Bluetooth Peripheral Usage Description"
+```
 
 #### Location privacy to allow the Quantum Pay SDK to work correctly
+```
 * "Privacy - Location When In Use Usage Description" 
 * "Privacy - Location Usage Description"
-
-![plist-entries](https://github.com/ipclucas/JekyllTest/blob/master/docs/assets/images/walkthroughs/ios-5.png)
-
-![QuantumPay Reader](https://res.cloudinary.com/ipcmobile/image/upload/c_scale,w_600,b_rgb:ececec/v1/devices/pay-reader.png)
+```
+![plist-entries](https://www.infineadev.com/lucas/qpay/ios-5.png)
 
 ---
 

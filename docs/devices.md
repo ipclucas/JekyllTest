@@ -1,18 +1,17 @@
 ---
 layout: default
-title: Payment Devices
+title: QuantumPay Devices
 nav_order: 2
 has_children: false
-permalink: payment-devices
+permalink: devices
 ---
 
-# Payment Devices
+# QuantumPay Devices
 {: .fs-9 }
 
-Infinite Peripherals offers a full lineup of devices to fit any payment needs.
+Purposely built for Mobile Payments.
 {: .fs-5 .fw-300 }
 
-## Purposely built for Mobile Payments.
 <br>
 <br>
 ![QuantumPay Reader](https://res.cloudinary.com/ipcmobile/image/upload/c_scale,w_600,b_rgb:ececec/v1/devices/pay-reader.png) <br>
