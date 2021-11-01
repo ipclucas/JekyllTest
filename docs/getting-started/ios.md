@@ -62,6 +62,8 @@ Learn how to set up your iOS app to use QuantumPay to process payment transactio
 
 ![toggle-bitcode](https://github.com/ipclucas/JekyllTest/blob/master/docs/assets/images/walkthroughs/ios-4.png)
 
+<img src="assets/images/walkthroughs/ios-4.png" class="img-responsive" alt="">
+
 ### Add MFi protocols
 Add new entry for "Supported external accessory protocols" to **Info.plist** with these values
 

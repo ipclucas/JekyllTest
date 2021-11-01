@@ -8,7 +8,7 @@ QuantumPay Solution. Your single source payment solution provider, purposely bui
 | --- | --- | --- |
 | iOS | iOS 13.0+ / Swift 5.0+ | Fully Tested |
 | Android | 8.0+ | Fully Tested |
-| Xamarin | - | In Development |
+| Xamarin | - | Fully Tested |
 
 ## Downloads
 
