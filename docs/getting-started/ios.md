@@ -86,6 +86,9 @@ Add new entry for "Supported external accessory protocols" to **Info.plist** wit
 ![plist-entries](https://github.com/ipclucas/JekyllTest/blob/master/docs/assets/images/walkthroughs/ios-3.png)
 
 ![QuantumPay Reader](https://res.cloudinary.com/ipcmobile/image/upload/c_scale,w_600,b_rgb:ececec/v1/devices/pay-reader.png)
+
+<img src="https://res.cloudinary.com/ipcmobile/image/upload/c_scale,w_600,b_rgb:ececec/v1/devices/pay-reader.png" class="img-responsive" alt="">
+
 ---
 
 ## Processing a Payment
