@@ -7,16 +7,7 @@ parent: Change Log
 
 # Xamarin Change Log
 
-### 1.2.0 - 2021-05-13
+### 1.0.44 - 2021-10-13
 
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-### 1.1.0 - 2021-04-19
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
+*   Implemented EMV requirement to avoid disclosing whether the transaction was processed online or offline
+*   Extra expiry date validations for bad swipes

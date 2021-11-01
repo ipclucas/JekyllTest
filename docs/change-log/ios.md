@@ -7,16 +7,7 @@ parent: Change Log
 
 # iOS Change Log
 
-### 1.2.0 - 2021-05-13
+### 1.0.10 - 2021-08-06
 
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-### 1.1.0 - 2021-04-19
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
+*   Added JCB scheme
+*   Add Merchant Override Floor Limit for Acceptable Risk on Offline EMV Transactions
