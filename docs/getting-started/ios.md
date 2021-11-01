@@ -7,7 +7,7 @@ has_children: false
 ---
 
 # Getting Started with iOS
-{: .fs-9 }
+{: .fs-9 .no_toc }
 
 Learn how to set up your iOS app to process payment transactions using QuantumPay.
 {: .fs-5 .fw-300 }
@@ -98,7 +98,7 @@ com.datecs.pinpad
   <img src="https://www.infineadev.com/lucas/qpay/ios-5.png" style='border:1px solid #000000' />
 </p>
 
-### Add **Privacy** entries into **Info.plist**
+### Add Privacy entries into Info.plist
 
 1. Also in your project's **Info.plist** file we need to add the four (4) privacy tags listed below.
 
