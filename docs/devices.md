@@ -13,7 +13,6 @@ Purposely built for Mobile Payments.
 {: .fs-5 .fw-300 }
 
 <br>
-<br>
 ![QuantumPay Reader](https://res.cloudinary.com/ipcmobile/image/upload/c_scale,w_600,b_rgb:ececec/v1/devices/pay-reader.png) <br>
 **QuantumPay Reader** <br>
 A compact card reader, which transforms any iOS or Android device into a payment terminal, can process secure payments via contactless and chip cards. The optional magnetic stripe card reader variant adds little change to the dimensions and outline.

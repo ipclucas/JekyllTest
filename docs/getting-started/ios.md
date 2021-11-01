@@ -50,6 +50,10 @@ Learn how to set up your iOS app to use QuantumPay to process payment transactio
 
 ![add-frameworks](https://www.infineadev.com/lucas/qpay/ios-1.png)
 
+<p align="center">
+  <img src="https://www.infineadev.com/lucas/qpay/ios-1.png" border="1" />
+</p>
+
 ![copy-frameworks](https://www.infineadev.com/lucas/qpay/ios-2.png)
 
 ![embed](https://www.infineadev.com/lucas/qpay/ios-3.png)
