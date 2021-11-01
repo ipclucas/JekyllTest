@@ -48,7 +48,7 @@ Learn how to set up your iOS app to use QuantumPay to process payment transactio
 * Add the framework files into **Frameworks, Libraries and Embedded Content**.
 * Set **Embed** to "Embed & Sign". 
 
-![QuantumPay](https://github.com/ipclucas/JekyllTest/tree/master/docs/assets/logos/quantumpay-dark.png)
+![QuantumPay](https://github.com/ipclucas/JekyllTest/tree/master/docs/assets/images/logos/ios-1.png)
 
 ### Installing ObjectBox
 * Visit [ObjectBox - Swift](https://swift.objectbox.io) and follow the instruction to install ObjectBox for your project.
@@ -56,7 +56,7 @@ Learn how to set up your iOS app to use QuantumPay to process payment transactio
 ### Turn off Bitcode support
 * Set **Enable Bitcode** to *false* in **Project's Build Setting**.
 
-![Bitcode](https://github.com/ipclucas/JekyllTest/tree/master/docs/assets/walkthroughs/ios-4.png
+![Bitcode](https://github.com/ipclucas/JekyllTest/tree/master/docs/assets/images/logos/ios-4.png
 
 ### Add MFi protocols
 Add new entry for "Supported external accessory protocols" to **Info.plist** with these values
