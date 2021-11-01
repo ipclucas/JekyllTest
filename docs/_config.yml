@@ -1,7 +1,7 @@
 title: "QuantumPay"
 remote_theme: pmarsceill/just-the-docs
 search_enabled: true
-logo: "/assets/images/QuatnumPay-dark.png"
+logo: "/assets/images/quantumpay-dark.png"
 
 search:
   # Split pages into sections that can be searched individually
