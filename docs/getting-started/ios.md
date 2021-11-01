@@ -50,13 +50,13 @@ Learn how to set up your iOS app to process payment transactions using QuantumPa
 
 1. Open Xcode and create a new folder to put the frameworks in.
 
-2. Drag all 4 of the previously listed frameworks into your folder.
+2. Drag the QuantumPay frameworks into your folder.
 
 <p align="center">
   <img src="https://www.infineadev.com/lucas/qpay/ios-1.png" style='border:1px solid #000000' />
 </p>
 
-3. Make sure when prompted you check **"Copy items if needed"**
+3. Make sure when prompted you enable "Copy items if needed"
 
 <p align="center">
   <img src="https://www.infineadev.com/lucas/qpay/ios-2.png" style='border:1px solid #000000' />
@@ -76,7 +76,7 @@ Learn how to set up your iOS app to process payment transactions using QuantumPa
 
 ### Turn off Bitcode support
 
-1. Go to your project's Build Settings and set **Enable Bitcode** to *false*. The easiest way to do this is to search for the setting using the bar in the top right.
+Go to your project's Build Settings and set **Enable Bitcode** to "No". The easiest way to find this setting is to search using the bar in the top right.
 
 <p align="center">
   <img src="https://www.infineadev.com/lucas/qpay/ios-4.png" style='border:1px solid #000000' />
@@ -84,7 +84,7 @@ Learn how to set up your iOS app to process payment transactions using QuantumPa
 
 ### Add MFi protocols
 
-1. Now go to your project's **Info.plist** file and add a new entry for "Supported external accessory protocols" using these values.
+Go to your project's **Info.plist** file and add a new entry for "Supported external accessory protocols" using these values.
 
 ```
 com.datecs.pengine
@@ -100,7 +100,7 @@ com.datecs.pinpad
 
 ### Add Privacy entries into Info.plist
 
-1. Also in your project's **Info.plist** file we need to add the four (4) privacy tags listed below.
+Also in your project's **Info.plist** file we need to add the four (4) privacy tags listed below.
 
 #### Bluetooth privacy options to connect to payment devices
 ```
