@@ -27,19 +27,6 @@ Learn how to set up your iOS app to process payment transactions using QuantumPa
 
 ## Requirements
 
-- SDKs
-    - QuantumPayClient.xcframework
-    - QuantumPayMobile.xcframework
-    - QuantumPayPeripheral.xcframework
-    - QuantumSDK.xcframework
-    - ObjectBox **(CocoaPods)**
-- Xcode 11+ / iOS 13+ / Swift 5.0+
-- Infinite Peripherals' payment device
-- Infinite Peripherals developer key for your app bundle ID
-- Payment related credentials: username/email, password, service name and tenant key
-
-***If you are missing any of these items, please contact Infinite Peripherals**
-
 <div class="code-example" markdown="1">
 - SDKs
     - QuantumPayClient.xcframework
@@ -52,23 +39,8 @@ Learn how to set up your iOS app to process payment transactions using QuantumPa
 - Infinite Peripherals developer key for your app bundle ID
 - Payment related credentials: username/email, password, service name and tenant key
 
-***If you are missing any of these items, please contact Infinite Peripherals**
+*If you are missing any of these items, please contact Infinite Peripherals
 </div>
-
-```markdown
-- SDKs
-    - QuantumPayClient.xcframework
-    - QuantumPayMobile.xcframework
-    - QuantumPayPeripheral.xcframework
-    - QuantumSDK.xcframework
-    - ObjectBox **(CocoaPods)**
-- Xcode 11+ / iOS 13+ / Swift 5.0+
-- Infinite Peripherals' payment device
-- Infinite Peripherals developer key for your app bundle ID
-- Payment related credentials: username/email, password, service name and tenant key
-```
-
-***If you are missing any of these items, please contact Infinite Peripherals**
 
 ---
 
@@ -84,13 +56,13 @@ Learn how to set up your iOS app to process payment transactions using QuantumPa
   <img src="https://www.infineadev.com/lucas/qpay/ios-1.png" style='border:1px solid #000000' />
 </p>
 
-Make sure when prompted you check **"Copy items if needed"**
+3. Make sure when prompted you check **"Copy items if needed"**
 
 <p align="center">
   <img src="https://www.infineadev.com/lucas/qpay/ios-2.png" style='border:1px solid #000000' />
 </p>
 
-3. Go to your project's General Settings and scroll down to the **Frameworks, Libraries and Embedded Content** section. For each framework we just added set the **Embed** field to "Embed & Sign"
+4. Go to your project's General Settings and scroll down to the **Frameworks, Libraries and Embedded Content** section. For each framework we just added set the **Embed** field to "Embed & Sign"
 
 <p align="center">
   <img src="https://www.infineadev.com/lucas/qpay/ios-3.png" style='border:1px solid #000000' />
@@ -98,13 +70,13 @@ Make sure when prompted you check **"Copy items if needed"**
 
 ### Installing ObjectBox
 
-1. In order to use the QuantumPay frameworks you will need to add ObjectBox to your project. Visit [ObjectBox - Swift](https://swift.objectbox.io) and follow the instructions to install ObjectBox for your project.
+1. In order to use the QuantumPay frameworks you will need to add ObjectBox to your project. Visit [ObjectBox](https://swift.objectbox.io) and follow the instructions to install ObjectBox for your project.
 
 2. If your project is not using CocoaPods yet, it may be more helpful to start here [ObjectBox - Detailed Instructions](https://swift.objectbox.io/install#detailed-instructions)
 
 ### Turn off Bitcode support
 
-Go to your project's Build Settings and set **Enable Bitcode** to *false*. The easiest way to do this is to search for the setting using the bar in the top right.
+1. Go to your project's Build Settings and set **Enable Bitcode** to *false*. The easiest way to do this is to search for the setting using the bar in the top right.
 
 <p align="center">
   <img src="https://www.infineadev.com/lucas/qpay/ios-4.png" style='border:1px solid #000000' />
@@ -112,7 +84,7 @@ Go to your project's Build Settings and set **Enable Bitcode** to *false*. The e
 
 ### Add MFi protocols
 
-Now go to your project's **Info.plist** file and add a new entry for "Supported external accessory protocols" using these values.
+1. Now go to your project's **Info.plist** file and add a new entry for "Supported external accessory protocols" using these values.
 
 ```
 com.datecs.pengine
@@ -122,19 +94,19 @@ com.datecs.printer.escpos
 com.datecs.pinpad
 ```
 
+<p align="center">
+  <img src="https://www.infineadev.com/lucas/qpay/ios-5.png" style='border:1px solid #000000' />
+</p>
+
 ### Add **Privacy** entries into **Info.plist**
 
-Also in your project's **Info.plist** file we need to add the four (4) privacy tags listed below.
+1. Also in your project's **Info.plist** file we need to add the four (4) privacy tags listed below.
 
 #### Bluetooth privacy options to connect to payment devices
 ```
 "Privacy - Bluetooth Always Usage Description" 
 "Privacy - Bluetooth Peripheral Usage Description"
 ```
-
-<p align="center">
-  <img src="https://www.infineadev.com/lucas/qpay/ios-5.png" style='border:1px solid #000000' />
-</p>
 
 #### Location privacy to allow the QuantumPay SDK to work correctly
 ```
