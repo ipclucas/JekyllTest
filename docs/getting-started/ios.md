@@ -48,11 +48,11 @@ Learn how to set up your iOS app to use QuantumPay to process payment transactio
 * Add the framework files into **Frameworks, Libraries and Embedded Content**.
 * Set **Embed** to "Embed & Sign". 
 
-![add-frameworks](https://github.com/ipclucas/JekyllTest/blob/master/docs/assets/images/walkthroughs/ios-1.png)
+![add-frameworks](https://www.infineadev.com/lucas/qpay/ios-1.png)
 
-![copy-frameworks](https://github.com/ipclucas/JekyllTest/blob/master/docs/assets/images/walkthroughs/ios-2.png)
+![copy-frameworks](https://www.infineadev.com/lucas/qpay/ios-2.png)
 
-![embed](https://github.com/ipclucas/JekyllTest/blob/master/docs/assets/images/walkthroughs/ios-3.png)
+![embed](https://www.infineadev.com/lucas/qpay/ios-3.png)
 
 ### Installing ObjectBox
 * Visit [ObjectBox - Swift](https://swift.objectbox.io) and follow the instruction to install ObjectBox for your project.
@@ -60,9 +60,7 @@ Learn how to set up your iOS app to use QuantumPay to process payment transactio
 ### Turn off Bitcode support
 * Set **Enable Bitcode** to *false* in **Project's Build Setting**.
 
-![toggle-bitcode](https://github.com/ipclucas/JekyllTest/blob/master/docs/assets/images/walkthroughs/ios-4.png)
-
-<img src="assets/images/walkthroughs/ios-4.png" class="img-responsive" alt="">
+![toggle-bitcode](https://www.infineadev.com/lucas/qpay/ios-4.png)
 
 ### Add MFi protocols
 Add new entry for "Supported external accessory protocols" to **Info.plist** with these values
@@ -83,7 +81,7 @@ Add new entry for "Supported external accessory protocols" to **Info.plist** wit
 * "Privacy - Location When In Use Usage Description" 
 * "Privacy - Location Usage Description"
 
-![plist-entries](https://github.com/ipclucas/JekyllTest/blob/master/docs/assets/images/walkthroughs/ios-3.png)
+![plist-entries](https://github.com/ipclucas/JekyllTest/blob/master/docs/assets/images/walkthroughs/ios-5.png)
 
 ![QuantumPay Reader](https://res.cloudinary.com/ipcmobile/image/upload/c_scale,w_600,b_rgb:ececec/v1/devices/pay-reader.png)
 
