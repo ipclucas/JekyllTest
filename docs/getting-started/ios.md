@@ -9,7 +9,7 @@ has_children: false
 # Getting Started with iOS
 {: .fs-9 }
 
-Learn how to set up your iOS app to use QuantumPay to process payment transactions.
+Learn how to set up your iOS app to process payment transactions using QuantumPay.
 {: .fs-5 .fw-300 }
 
 ---
@@ -27,18 +27,48 @@ Learn how to set up your iOS app to use QuantumPay to process payment transactio
 
 ## Requirements
 
-- SDKs *(please contact Infinite Peripherals)*
+- SDKs
     - QuantumPayClient.xcframework
     - QuantumPayMobile.xcframework
     - QuantumPayPeripheral.xcframework
     - QuantumSDK.xcframework
-    - ObjectBox *(CocoaPods)*
-- Xcode 11+
-- iOS 13+
+    - ObjectBox **(CocoaPods)**
+- Xcode 11+ / iOS 13+ / Swift 5.0+
 - Infinite Peripherals' payment device
-- Swift
-- Payment related credentials: username/email, password, service name, and tenant key (please contact Infinite Peripherals)
-- Developer key for your app bundle ID (please contact Infinite Peripherals)
+- Infinite Peripherals developer key for your app bundle ID
+- Payment related credentials: username/email, password, service name and tenant key
+
+***If you are missing any of these items, please contact Infinite Peripherals**
+
+<div class="code-example" markdown="1">
+- SDKs
+    - QuantumPayClient.xcframework
+    - QuantumPayMobile.xcframework
+    - QuantumPayPeripheral.xcframework
+    - QuantumSDK.xcframework
+    - ObjectBox **(CocoaPods)**
+- Xcode 11+ / iOS 13+ / Swift 5.0+
+- Infinite Peripherals' payment device
+- Infinite Peripherals developer key for your app bundle ID
+- Payment related credentials: username/email, password, service name and tenant key
+
+***If you are missing any of these items, please contact Infinite Peripherals**
+</div>
+
+```markdown
+- SDKs
+    - QuantumPayClient.xcframework
+    - QuantumPayMobile.xcframework
+    - QuantumPayPeripheral.xcframework
+    - QuantumSDK.xcframework
+    - ObjectBox **(CocoaPods)**
+- Xcode 11+ / iOS 13+ / Swift 5.0+
+- Infinite Peripherals' payment device
+- Infinite Peripherals developer key for your app bundle ID
+- Payment related credentials: username/email, password, service name and tenant key
+```
+
+***If you are missing any of these items, please contact Infinite Peripherals**
 
 ---
 
@@ -48,15 +78,20 @@ Learn how to set up your iOS app to use QuantumPay to process payment transactio
 * Add the framework files into **Frameworks, Libraries and Embedded Content**.
 * Set **Embed** to "Embed & Sign". 
 
-![add-frameworks](https://www.infineadev.com/lucas/qpay/ios-1.png)
 
 <p align="center">
   <img src="https://www.infineadev.com/lucas/qpay/ios-1.png" style='border:1px solid #000000' />
 </p>
 
-![copy-frameworks](https://www.infineadev.com/lucas/qpay/ios-2.png)
 
-![embed](https://www.infineadev.com/lucas/qpay/ios-3.png)
+<p align="center">
+  <img src="https://www.infineadev.com/lucas/qpay/ios-2.png" style='border:1px solid #000000' />
+</p>
+
+
+<p align="center">
+  <img src="https://www.infineadev.com/lucas/qpay/ios-3.png" style='border:1px solid #000000' />
+</p>
 
 ### Installing ObjectBox
 * Visit [ObjectBox - Swift](https://swift.objectbox.io) and follow the instruction to install ObjectBox for your project.
@@ -64,7 +99,9 @@ Learn how to set up your iOS app to use QuantumPay to process payment transactio
 ### Turn off Bitcode support
 * Set **Enable Bitcode** to *false* in **Project's Build Setting**.
 
-![toggle-bitcode](https://www.infineadev.com/lucas/qpay/ios-4.png)
+<p align="center">
+  <img src="https://www.infineadev.com/lucas/qpay/ios-4.png" style='border:1px solid #000000' />
+</p>
 
 ### Add MFi protocols
 Add new entry for "Supported external accessory protocols" to **Info.plist** with these values
@@ -90,7 +127,9 @@ com.datecs.pinpad
 * "Privacy - Location When In Use Usage Description" 
 * "Privacy - Location Usage Description"
 ```
-![plist-entries](https://www.infineadev.com/lucas/qpay/ios-5.png)
+<p align="center">
+  <img src="https://www.infineadev.com/lucas/qpay/ios-5.png" style='border:1px solid #000000' />
+</p>
 
 ---
 
