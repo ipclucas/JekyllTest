@@ -38,9 +38,9 @@ Learn how to set up your iOS app to process payment transactions using QuantumPa
 - Infinite Peripherals' payment device
 - Infinite Peripherals developer key for your app bundle ID
 - Payment related credentials: username/email, password, service name and tenant key
-
-*If you are missing any of these items, please contact Infinite Peripherals
 </div>
+
+**If you are missing any of these items, please contact Infinite Peripherals**
 
 ---
 
@@ -48,9 +48,9 @@ Learn how to set up your iOS app to process payment transactions using QuantumPa
 
 ### Adding the QuantumPay SDKs
 
-1. Open Xcode and create a new folder to put the frameworks in.
+1. Open Xcode and create a new folder to put the frameworks in
 
-2. Drag the QuantumPay frameworks into your folder.
+2. Drag the QuantumPay frameworks into your folder
 
 <p align="center">
   <img src="https://www.infineadev.com/lucas/qpay/ios-1.png" style='border:1px solid #000000' />
@@ -62,7 +62,7 @@ Learn how to set up your iOS app to process payment transactions using QuantumPa
   <img src="https://www.infineadev.com/lucas/qpay/ios-2.png" style='border:1px solid #000000' />
 </p>
 
-4. Go to your project's General Settings and scroll down to the **Frameworks, Libraries and Embedded Content** section. For each framework we just added set the **Embed** field to "Embed & Sign"
+4. Go to your project's General Settings and scroll down to the **Frameworks, Libraries and Embedded Content** section. For each framework we just added set the **Embed** field to "Embed & Sign".
 
 <p align="center">
   <img src="https://www.infineadev.com/lucas/qpay/ios-3.png" style='border:1px solid #000000' />
@@ -121,7 +121,7 @@ Also in your project's **Info.plist** file we need to add the four (4) privacy t
 
 ## Processing a Payment
 
-### 1. Initialize the SDKs
+### Initialize the SDKs
 The SDKs need to be initialized with the correct keys provided by Infinite Peripherals. This step is important and should be the first code to run before using other functions from the SDKs.
 ```swift
 // Create tenant
@@ -131,7 +131,7 @@ let tenant = Tenant(hostKey: "Host key", tenantKey: "Tenant key")
 InfinitePeripherals.initialize(developerKey: "Developer key", tenant: tenant)
 ```
 
-### 2. Create Payment Device
+### Create Payment Device
 These are current supported payment devices: QPC150, QPC250, QPP400, QPP450, QPR250, QPR300. You can initialize one of these object to use for payment depends on which hardware you have. 
 - Initialize QPC150, QPC250 (Lightning connector)
 ```swift
@@ -143,7 +143,7 @@ let paymentDevice = QPC250()
 let paymentDevice = QPR250(serial: "2320900026") 
 ```
 
-### 3. Create Payment Engine
+### Create Payment Engine
 The payment engine is the main object that you will interact with to send transactions and receive callbacks.
 ```swift
 do {
@@ -174,7 +174,7 @@ catch {
 }
 ```
 
-### 4. Setup Handlers
+### Setup Handlers
 Once the `PaymentEngine` is created, you can use it to set handlers for the operation. The `PaymentEngine` handlers will get called through out the payment process and return back various states of the transaction. You can also set these handlers in the completion block of Step #3.
 - `ConnectionStateHandler` will get called when the connection state of the payment device changes between connecting, connected, and disconnected. Please make sure that the connection state is connected before starting a transaction.
 ```swift
@@ -213,13 +213,13 @@ self.pEngine!.setPeripheralMessageHandler(handler: { (peripheral, message) in
 })
 ```
 
-### 5. Connect to Payment Device
+### Connect to Payment Device
 Please make sure the device is attached and turned on. We need to connect to the payment device prior to start the transaction using the payment device. The connection state will be returned to `ConnectionStateHandler` that we already setup at Step #4. If you did't set AutoConnect when adding the peripheral in Step #3, you need to call `connect()` before starting a transaction: 
 ```swift
 self.pEngine!.connect()
 ```
 
-### 6. Create an Invoice
+### Create an Invoice
 The invoice holds information about a purchase order, and the items in the order.
 ```swift
 let invoice = try self.pEngine!
@@ -248,7 +248,7 @@ let invoice = try self.pEngine!
                     .build()
 ```
 
-### 7. Create a Transaction
+### Create a Transaction
 The transaction holds information about the invoice, the total amount for that transaction, and the type of the transaction (e.g.: sale, auth, refund...)
 ```swift
 let transaction = try self.pEngine!.buildTransaction(invoice: invoice)
@@ -268,7 +268,7 @@ let transaction = try self.pEngine!.buildTransaction(invoice: invoice)
                         .build()
 ```
 
-### 8. Start Transaction
+### Start Transaction
 When we have everything ready, we can now start the transaction and take payment. Watch the handlers' messages, and statuses to see the current process.
 ```swift
 try self.pEngine!.startTransaction(transaction: txn) { (transactionResult, transactionResponse) in
@@ -280,7 +280,7 @@ try self.pEngine!.startTransaction(transaction: txn) { (transactionResult, trans
     }
 ```
 
-### 9. Transaction Receipt
+### Transaction Receipt
 Once the transaction is completed and approved, you can retrieve the receipt from the `TransactionResultHandler` callback. 
 ```swift
 // The url for customer receipt
@@ -290,7 +290,7 @@ transactionResult.receipt?.customerReceiptUrl
 transactionResult.receipt?.merchantReceiptUrl
 ```
 
-### 10. Disconnect Payment Device
+### Disconnect Payment Device
 If needed, you can disconnect the payment device at anytime. The device need to be connected at all time before, and during a transaction process.
 ```swift
 self.pEngine!.disconnect()
@@ -300,9 +300,10 @@ self.pEngine!.disconnect()
 
 ## Scanning a Barcode
 
-If your payment device supports barcode scanning (e.g.: QPC150, QPC250), in order to receive the barcode data, you will need to set your class to conform to the protocol `IPCDTDeviceDelegate`, and add the class instance as a delegate to receive the barcode. The scanner will only scan if it is connected to the application.
+Some of our payment devices also support barcode scanning (e.g., QPC150, QPC250). In order to receive the barcode data, you will need to set your class to conform to the protocol `IPCDTDeviceDelegate` and add the class instance as a delegate that will receive the data when scanned. Note that the scan button will not work if it is not properly connected to the application.
 
 ```swift
+// Add class instance as delegate
 self.paymentDevice.device.addDelegate(self)
 ```
 
