@@ -1,4 +1,5 @@
 ![QuantumPay](https://github.com/ipclucas/JekyllTest/blob/master/docs/assets/images/logos/quantumpay-dark.png)
+
 QuantumPay Solution. Your single source payment solution provider, purposely built for QuantumPay Reader, QuantumPay Pin, QuantumPay Connected, and QuantumPay Kiosk.
 
 ## Requirements
