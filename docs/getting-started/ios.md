@@ -120,7 +120,7 @@ At this point, your Xcode project should be configured and ready to use the Quan
 
 
 ### Initialize the SDKs
-The SDKs need to be initialized with the correct keys provided by Infinite Peripherals. This step is important and should be the first code to run before using other functions from the SDKs.
+First, initialize the SDKs with valid keys provided by Infinite Peripherals. This is a required step before you are able to use other functions from the SDKs.
 ```swift
 // Create tenant
 let tenant = Tenant(hostKey: "Host key", tenantKey: "Tenant key")
@@ -130,12 +130,15 @@ InfinitePeripherals.initialize(developerKey: "Developer key", tenant: tenant)
 ```
 
 ### Create Payment Device
-These are current supported payment devices: QPC150, QPC250, QPP400, QPP450, QPR250, QPR300. You can initialize one of these object to use for payment depends on which hardware you have. 
+Now initialize a payment device that matches the hardware you are using. The current supported payment devices: QPC150, QPC250, QPP400, QPP450, QPR250, QPR300. Note that this step is different for payment devices that are connected with Bluetooth LE.
 - Initialize QPC150, QPC250 (Lightning connector)
+
 ```swift
 let paymentDevice = QPC250()
 ```
-- Initialize QPP400, QPP450, QPR250, QPR300 (Bluetooth LE) by supplying its serial number so the `PaymentEngine` can search for it and connect. On the first connection, the app will ask for pairing. Press OK on the popup appear on the app. On the device, if it is QPR device, press the little button on top of the device opposite with the power button, if it is QPP device, press the green check mark button on bottom right of the keypad to complete the pairing.
+
+- Initialize QPP400, QPP450, QPR250, QPR300 (Bluetooth LE) by supplying its serial number so the `PaymentEngine` can search for it and connect. On first connection the app will prompt you to pair the device. Be sure to press "OK" when the pop-up is shown. To complete the pairing, if using a QPR device, press the small button on top of the device opposite the power button. If using a QPP device, press the green check mark button on the bottom right of the keypad.
+
 ```swift
 // The device serial number is found on the label on the device.
 let paymentDevice = QPR250(serial: "2320900026") 
@@ -143,6 +146,7 @@ let paymentDevice = QPR250(serial: "2320900026")
 
 ### Create Payment Engine
 The payment engine is the main object that you will interact with to send transactions and receive callbacks.
+
 ```swift
 do {
     try PaymentEngine
