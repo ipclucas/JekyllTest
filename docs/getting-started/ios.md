@@ -40,15 +40,16 @@ Learn how to set up your iOS app to process payment transactions using QuantumPa
 - Payment related credentials: username/email, password, service name and tenant key
 </div>
 
-**If you are missing any of these items, please contact Infinite Peripherals**
+***If you are missing any of these items, please contact Infinite Peripherals**
 
 ---
 
 ## Project Setup
+Before we jump into the code we need to make sure your Xcode project is properly configured to use the QuantumPay frameworks. Follow the steps below to get you set up.
 
 ### Adding the QuantumPay SDKs
 
-1. Open Xcode and create a new folder to put the frameworks in
+1. Open Xcode and create a new folder to put the frameworks in. If you have a place for frameworks already you can skip this.
 
 2. Drag the QuantumPay frameworks into your folder
 
@@ -84,7 +85,7 @@ Go to your project's Build Settings and set **Enable Bitcode** to "No". The easi
 
 ### Add MFi protocols
 
-Go to your project's **Info.plist** file and add a new entry for "Supported external accessory protocols" using these values.
+Go to your project's **Info.plist** file and add a new entry for "Supported external accessory protocols" using the following values.
 
 ```
 com.datecs.pengine
@@ -100,16 +101,11 @@ com.datecs.pinpad
 
 ### Add Privacy entries into Info.plist
 
-Also in your project's **Info.plist** file we need to add the four (4) privacy tags listed below.
+Also in your project's **Info.plist** file we need to add the four (4) privacy tags listed below. You can enter any string value you want or copy what we have below.
 
-#### Bluetooth privacy options to connect to payment devices
 ```
 "Privacy - Bluetooth Always Usage Description" 
 "Privacy - Bluetooth Peripheral Usage Description"
-```
-
-#### Location privacy to allow the QuantumPay SDK to work correctly
-```
 "Privacy - Location When In Use Usage Description" 
 "Privacy - Location Usage Description"
 ```
@@ -120,6 +116,8 @@ Also in your project's **Info.plist** file we need to add the four (4) privacy t
 ---
 
 ## Processing a Payment
+At this point, your Xcode project should be configured and ready to use the QuantumPay libraries. This next section will take you through some initial setup and all the way to processing a payment.
+
 
 ### Initialize the SDKs
 The SDKs need to be initialized with the correct keys provided by Infinite Peripherals. This step is important and should be the first code to run before using other functions from the SDKs.
