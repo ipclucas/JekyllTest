@@ -149,43 +149,43 @@ The payment engine is the main object that you will interact with to send transa
 
 ```swift
 do {
-    try PaymentEngine
-        // The PaymentEngineBuilder object.
-        .builder()
-        // Set the server to send transactions to. Either test or production.
+    try PaymentEngine.builder()
+        // Set server environment to either test or production
         .server(server: ServerEnvironment.test)
-        // The credential used to register hardware devices
+        // Credentials used to register hardware devices
         .registrationCredentials(username: "username", password: "password")
-        // Set the paymentDevice that we created earlier to PaymentEngine
-        // The capabilities are the card input methods (e.g.: Mag stripe, contactless, chip). If you don't want the full array of capabilities provided by the device object, you can put an array of selected input methods only.
-        .addPeripheral(peripheral: self.paymentDevice, capabilities: self.paymentDevice.availableCapabilities!, autoConnect: false)
-        // The point of sale ID of the device/app. This posID should be unique for each instance of the app. The database also rely on this posID to access a saved database
-        .posID(posID: "A unique ID")
-        // The timeout when waiting for a card to be presented to the payment device when a transaction has started.
+        // Using the device we created earlier, set the peripheral and capabilities
+        // Capabilities are the card input methods (e.g.: Mag stripe, contactless, chip). If you don't want the full array of capabilities provided by the device object, you can pass an array of select input methods only.
+        .addPeripheral(peripheral: paymentDevice, capabilities: paymentDevice.availableCapabilities!, autoConnect: false)
+        // The Point of Sale ID of the device/app. This posID should be unique for each instance of the app. This is used by the database to access saved transactions.
+        .posID(posID: PaymentConfig.posId)
+        // Amount of time after transaction has started to wait for card to be presented
         .transactionTimeout(timeoutInSeconds: 30)
-        // StoreAndForwardMode for handling card transactions.
+        // StoreAndForwardMode for submitting transactions to server
         .storeAndForward(mode: .whenOffline, autoUploadInterval: 60)
-        // Build the PaymentEngine. If successful, the PaymentEngine will be passed in the completion block.
+        // If this build function is successful, the PaymentEngine will be passed in the completion block.
         .build(handler: { (engine) in
-            /// Save the engine object for operation
+            // Save the created engine object
             self.pEngine = engine
         })
-}
-catch {
-    print("Error creating payment engine: \(error.localizedDescription)")
+    }
+    catch {
+        print("Error creating payment engine: \(error.localizedDescription)")
+    }
 }
 ```
 
 ### Setup Handlers
-Once the `PaymentEngine` is created, you can use it to set handlers for the operation. The `PaymentEngine` handlers will get called through out the payment process and return back various states of the transaction. You can also set these handlers in the completion block of Step #3.
-- `ConnectionStateHandler` will get called when the connection state of the payment device changes between connecting, connected, and disconnected. Please make sure that the connection state is connected before starting a transaction.
+Once the `PaymentEngine` is created, you can use it to set handlers so you can track the operation. The `PaymentEngine` handlers will get called throughout the payment process and will return you the current state of the transaction. You can set these handlers in the completion block of Step #3.
+
+`ConnectionStateHandler` will get called when the connection state of the payment device changes between connecting, connected, and disconnected. It is important to make sure your device is connected before attempting to start a transaction.
 ```swift
 self.pEngine!.setConnectionStateHandler(handler: { (peripheral, connectionState) in
     // Handle connection state
 })
 ```
 
-- `TransactionResultHandler` will get called after the transaction processing. The result status will disclose whether the transaction is declined, or approved.
+`TransactionResultHandler` will get called after the transaction is processed. The `TransactionResult` status will disclose whether the transaction was approved or declined.
 ```swift
 self.pEngine!.setTransactionResultHandler(handler: { (transactionResult) in
     // Handle the transaction result
@@ -194,24 +194,24 @@ self.pEngine!.setTransactionResultHandler(handler: { (transactionResult) in
 })
 ```
 
-- `TransactionStateHandler` will get called when the transaction state changes. The TransactionState represents a unique state in the workflow of capturing a transaction.
+`TransactionStateHandler` will get called when the transaction state changes. The `TransactionState` represents a unique state in the workflow of capturing a transaction. These include "waitingForCard, waitingForPin, onlineAuthorization, etc.
 ```swift
 self.pEngine!.setTransactionStateHandler(handler: { (peripheral, transaction, transactionState) in
-    // Handle the transaction states
+    // Handle transaction state
 })
 ```
 
-- `PeripheralStateHandler` will get called when peripheral state of the transaction changes. The peripheral state represents the current state of the peripheral as reported by the peripheral device itself.
+`PeripheralStateHandler` will get called when the state of the peripheral changes during the transaction process. The `PeripheralState` represents the current state of the peripheral as reported by the peripheral device itself. These include "idle", "ready", "contactCardInserted" etc.
 ```swift
 self.pEngine!.setPeripheralStateHandler(handler: { (peripheral, state) in
     // Handle peripheral state
 })
 ```
 
-- `PeripheralMessageHandler` will get called when there is new message about the transaction through out the process. The peripheral message tells you when to present the card, if the care read is ok or fails, etc.
+`PeripheralMessageHandler` will get called when there is new message about the transaction throughout the process. The peripheral message tells you when to present the card, if the card read is successful or failed, etc. This usually indicates something that should be displayed in the user interface.
 ```swift
 self.pEngine!.setPeripheralMessageHandler(handler: { (peripheral, message) in
-    // Handle the peripheral message
+    // Handle peripheral message
 })
 ```
 
