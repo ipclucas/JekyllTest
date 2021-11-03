@@ -176,7 +176,7 @@ do {
 ```
 
 ### Setup Handlers
-Once the `PaymentEngine` is created, you can use it to set handlers so you can track the operation. The `PaymentEngine` handlers will get called throughout the payment process and will return you the current state of the transaction. You can set these handlers in the completion block of Step #3.
+Once the `PaymentEngine` is created, you can use it to set handlers so you can track the operation. The `PaymentEngine` handlers will get called throughout the payment process and will return you the current state of the transaction. You can set these handlers in the completion block of the previous step.
 
 `ConnectionStateHandler` will get called when the connection state of the payment device changes between connecting, connected, and disconnected. It is important to make sure your device is connected before attempting to start a transaction.
 ```swift
@@ -216,20 +216,21 @@ self.pEngine!.setPeripheralMessageHandler(handler: { (peripheral, message) in
 ```
 
 ### Connect to Payment Device
-Please make sure the device is attached and turned on. We need to connect to the payment device prior to start the transaction using the payment device. The connection state will be returned to `ConnectionStateHandler` that we already setup at Step #4. If you did't set AutoConnect when adding the peripheral in Step #3, you need to call `connect()` before starting a transaction: 
+Now that your payment engine is configured and your handlers are set up, lets connect to the payment device. Please make sure the device is attached and turned on. We need to connect to the payment device prior to starting a transaction. The connection state will be returned to `ConnectionStateHandler` that we already set up previously. If you didn't set autoConnect when creating the payment engine, you will need to call `connect()` before starting a transaction.
+
 ```swift
 self.pEngine!.connect()
 ```
 
 ### Create an Invoice
-The invoice holds information about a purchase order, and the items in the order.
+Time to create an invoice. This invoice object holds information about a purchase order and the items in the order.
 ```swift
 let invoice = try self.pEngine!
                     // Build invoice with a reference number. This can be anything.
                     .buildInvoice(reference: invoiceNum)
                     // Set company name
                     .companyName(companyName: "ACME SUPPLIES INC.")
-                    // Set purchase order reference. This can be anything to identify an order
+                    // Set purchase order reference. This can be anything to identify the order.
                     .purchaseOrderReference(reference: "P01234")
                     // A way to add item to the invoice
                     .addItem(productCode: "SKU1", description: "Discount Voucher for Return Visit", unitPrice: 0)
@@ -244,21 +245,21 @@ let invoice = try self.pEngine!
                             .unitOfMeasureCode(.Each)
                             .calculateTotals()
                     }
-                    // Calculates the totals on the invoice
+                    // Calculate totals on the invoice
                     .calculateTotals()
-                    // Builds the Invoice instance with the provided values.
+                    // Builds invoice instance with the provided values
                     .build()
 ```
 
 ### Create a Transaction
-The transaction holds information about the invoice, the total amount for that transaction, and the type of the transaction (e.g.: sale, auth, refund...)
+The transaction object holds information about the invoice, the total amount for the transaction and the type of the transaction (e.g.: sale, auth, refund, etc.)
 ```swift
 let transaction = try self.pEngine!.buildTransaction(invoice: invoice)
                         // The transaction is of type Sale
                         .sale()
-                        // The total amount of all the invoices
+                        // The total amount of for all invoices
                         .amount(1.00, currency: .USD)
-                        // A unique reference to the transaction, and cannot be reused.
+                        // A unique reference to the transaction. This cannot be reused.
                         .reference("A reference to this transaction")
                         // Date and time of the transaction
                         .dateTime(Date())
@@ -271,19 +272,21 @@ let transaction = try self.pEngine!.buildTransaction(invoice: invoice)
 ```
 
 ### Start Transaction
-When we have everything ready, we can now start the transaction and take payment. Watch the handlers' messages, and statuses to see the current process.
+Now that everything is ready we can start the transaction and take payment. Watch the handler messages and status updates to track the transaction throughout the process.
+
 ```swift
 try self.pEngine!.startTransaction(transaction: txn) { (transactionResult, transactionResponse) in
-        // Handle the transaction result and response
-        // transactionResult.status disclose the state of the transaction after processed. See `TransactionResultStatus` for more info.
-        // transactionResponse disclose response of server for the submitted transaction. If error is found, the object will contain
-        // errors information. See `TransactionResponse` for more info.
-        // ....
-    }
+    // Handle the transaction result and response
+    // transactionResult.status discloses the state of the transaction after being processed. See `TransactionResultStatus` for more info.
+    // transactionResponse discloses the server's response for the submitted transaction. If an error occurs, the object will contain the
+    // error's information. See `TransactionResponse` for more info.
+    // ....
+}
 ```
 
 ### Transaction Receipt
-Once the transaction is completed and approved, you can retrieve the receipt from the `TransactionResultHandler` callback. 
+Once the transaction is completed and approved, the receipt is sent to the `TransactionResultHandler` callback.
+
 ```swift
 // The url for customer receipt
 transactionResult.receipt?.customerReceiptUrl
@@ -293,7 +296,8 @@ transactionResult.receipt?.merchantReceiptUrl
 ```
 
 ### Disconnect Payment Device
-If needed, you can disconnect the payment device at anytime. The device need to be connected at all time before, and during a transaction process.
+Now that the transaction is complete you are free to disconnect the payment device if you wish. Please note that this should not be called before or during the transaction process.
+
 ```swift
 self.pEngine!.disconnect()
 ```
