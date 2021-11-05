@@ -186,8 +186,8 @@ self.pEngine!.setConnectionStateHandler(handler: { (peripheral, connectionState)
 ```swift
 self.pEngine!.setTransactionResultHandler(handler: { (transactionResult) in
     // Handle the transaction result
-    // TransactionResult.status provides the transaction result
-    // TransactionResult.receipt provides the online receipt when TransactionResult.state == .approved
+    // transactionResult.status provides the transaction result
+    // transactionResult.receipt provides the online receipt when transactionResult.state == .approved
 })
 ```
 
@@ -213,7 +213,7 @@ self.pEngine!.setPeripheralMessageHandler(handler: { (peripheral, message) in
 ```
 
 ### Connect to Payment Device
-Now that your payment engine is configured and your handlers are set up, lets connect to the payment device. Please make sure the device is attached and turned on. We need to connect to the payment device prior to starting a transaction. The connection state will be returned to `ConnectionStateHandler` that we already set up previously. If you didn't set autoConnect when creating the payment engine, you will need to call `connect()` before starting a transaction.
+Now that your payment engine is configured and your handlers are set up, lets connect to the payment device. Please make sure the device is attached and turned on. We need to connect to the payment device prior to starting a transaction. The connection state will be returned to the `ConnectionStateHandler` that we set up previously. If you didn't set autoConnect when creating the payment engine, you will need to call `connect()` before starting a transaction.
 
 ```swift
 self.pEngine!.connect()
