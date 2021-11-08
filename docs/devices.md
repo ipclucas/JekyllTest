@@ -9,36 +9,43 @@ permalink: devices
 # QuantumPay Devices
 {: .fs-9 }
 
-Purposely built for Mobile Payments.
+Infinite Peripherals offers a range of mobile & fixed Point of Interaction devices that are PCI-PTS Certified and EMVCo approved.
 {: .fs-5 .fw-300 }
 
-Our QuantumPay Connected family of devices allows enterprise to extend the capability of their iPhones® and iPads® into a powerful point-of-sale solution. Stable and secure passthrough connectivity via MFI certified Lightning® connector ensures a transaction is never missed.
 
 <br>
 <p align="left">
-  <img src="https://www.infineadev.com/lucas/qpay/reader.png" style='border:1px solid #000000' />
+  <img src="https://www.infineadev.com/lucas/qpay/reader.png" />
 </p>
 <br>
 **QuantumPay Reader** <br>
-A compact card reader, which transforms any iOS or Android device into a payment terminal, can process secure payments via contactless and chip cards. The optional magnetic stripe card reader variant adds little change to the dimensions and outline.
+Compact card readers transform any iOS or Android device into a payment terminal, can process secure payments via contactless and chip cards. The optional magnetic stripe card reader variant adds little change to the dimensions and outline.
 
 <br>
 <br>
 <p align="left">
-  <img src="https://www.infineadev.com/lucas/qpay/pin.png" style='border:1px solid #000000' />
+  <img src="https://www.infineadev.com/lucas/qpay/pin.png" />
 </p>
 **QuantumPay Pin** <br>
-The QPP family of devices offers a sizeable colorful touch screen display that fits in the palm of your hand and supports all payment modes. The magnetic stripe, EMV Chip & PIN, and Contactless payments plus Bluetooth connectivity to POS solutions deliver a future proof solution.
+The QuantumPay Pin family of devices offers a sizeable colorful touch screen display that fits in the palm of your hand and supports all payment modes. The magnetic stripe, EMV Chip & PIN, and Contactless payments plus Bluetooth connectivity to POS solutions deliver a future proof solution.
 
 <br>
 <p align="left">
-  <img src="https://www.infineadev.com/lucas/qpay/connect.png" style='border:1px solid #000000' />
+  <img src="https://www.infineadev.com/lucas/qpay/connected.png" />
 </p>
 **QuantumPay Connected** <br>
-The QPC family of devices allows mobile workers to extend the capabilities of their iPhones® and iPads® into a powerful point-of-sale solution. Stable and secure passthrough connectivity via MFI certified Lightning® connector ensures a transaction is never missed. The QPC family of devices offers support for magnetic stripe, EMV contactless card payment technologies with a 2D barcode scanner option.
+The QuantumPay Connected family of devices allows mobile workers to extend the capabilities of their iPhones® and iPads® into a powerful point-of-sale solution. Stable and secure passthrough connectivity via MFI certified Lightning® connector ensures a transaction is never missed. The QPC family of devices offers support for magnetic stripe, EMV contactless card payment technologies with a 2D barcode scanner option.
 
+<br>
 <p align="left">
-  <img src="https://www.infineadev.com/lucas/qpay/kiosk.png" style='border:1px solid #000000' />
+  <img src="https://www.infineadev.com/lucas/qpay/all-in-one.png" />
+</p>
+**QuantumPay Pro** <br>
+Introducing QuantumPay PRO, our first complete payment solution for Android OS. With expanded payment options, optimized 5-inch touchscreen, and an integrated barcode scanner, the QuantumPay PRO increases workflow mobility and device flexibility.
+
+<br>
+<p align="left">
+  <img src="https://www.infineadev.com/lucas/qpay/kiosk.png" />
 </p>
 **QuantumPay Kiosk** <br>
 Introducing the first brandable modular kiosk to fit Android or iOS tablets. Quickly implement payment processing using our suite of payment peripherals and our cloud based, PCI compliant solution.
