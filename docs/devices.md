@@ -9,19 +9,16 @@ permalink: devices
 # QuantumPay Devices
 {: .fs-9 }
 
-Infinite Peripherals offers a range of mobile & fixed Point of Interaction devices that are PCI-PTS Certified and EMVCo approved.
+Infinite Peripherals offers a range of mobile & fixed Point of Interaction devices that feature a variety of secure payment options from MSR to EMV Contactless, ensuring frictionless transactions anywhere, anytime.
 {: .fs-5 .fw-300 }
-
 
 <br>
 <p align="left">
   <img src="https://www.infineadev.com/lucas/qpay/reader.png" />
 </p>
-<br>
 **QuantumPay Reader** <br>
 Compact card readers transform any iOS or Android device into a payment terminal, can process secure payments via contactless and chip cards. The optional magnetic stripe card reader variant adds little change to the dimensions and outline.
 
-<br>
 <br>
 <p align="left">
   <img src="https://www.infineadev.com/lucas/qpay/pin.png" />
