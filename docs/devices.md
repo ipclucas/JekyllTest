@@ -35,14 +35,14 @@ The QuantumPay Connected family of devices allows mobile workers to extend the c
 
 <br>
 <p align="left">
-  <img src="https://www.infineadev.com/lucas/qpay/all-in-one.png" />
-</p>
-**QuantumPay Pro** <br>
-Introducing QuantumPay PRO, our first complete payment solution for Android OS. With expanded payment options, optimized 5-inch touchscreen, and an integrated barcode scanner, the QuantumPay PRO increases workflow mobility and device flexibility.
-
-<br>
-<p align="left">
   <img src="https://www.infineadev.com/lucas/qpay/kiosk.png" />
 </p>
 **QuantumPay Kiosk** <br>
 Introducing the first brandable modular kiosk to fit Android or iOS tablets. Quickly implement payment processing using our suite of payment peripherals and our cloud based, PCI compliant solution.
+
+<br>
+<p align="left">
+  <img src="https://www.infineadev.com/lucas/qpay/all-in-one.png" />
+</p>
+**QuantumPay Pro** <br>
+Introducing QuantumPay PRO, our first complete payment solution for Android OS. With expanded payment options, optimized 5-inch touchscreen, and an integrated barcode scanner, the QuantumPay PRO increases workflow mobility and device flexibility.
